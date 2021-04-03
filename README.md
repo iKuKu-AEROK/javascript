@@ -281,6 +281,7 @@ console.log(typeof studyArr[0]);
 console.log(typeof studyArr[1]);
 console.log(typeof studyArr[2]);
 console.log(typeof studyArr[3]);
+```
 
 ## 배열의 원소 추가, 수정, 삭제
 - 배열의 원소는 Dynamic 하게 추가, 수정, 삭제가 가능하다.
