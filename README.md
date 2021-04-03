@@ -246,3 +246,96 @@ console.log(study.hasOwnProperty('id'));
 
 console.log(study);
 ```
+
+# 배열
+- 배열도 객체이다.
+- 자바와는 달리 크기를 지정하지 않아도 된다.
+- 어떤 타입의 데이터도 저장 가능하며 하나의 배열에 혼횽하여 저장이 가능하다.
+- 값을 순차적으로 넣지 않아도 무방하다.
+
+## 배열생성 - Array() 생성자 함수
+- new 연산자를 이용한다.
+- 일반적으로는 아래의 배열 리터널 방법을 많이 사용한다.
+
+```
+var studyArr1 = new Arr(5);
+var studyArr2 = new Array(1, '2', true, 4, 5);
+
+console.log(studyArr1);
+console.log(studyArr2);
+```
+
+## 배열생성 - 배열 리터널
+- 대괄호를 이용하여 배열을 생성한다.
+- 값이 없는 index 에 접근하였을때 undefined 가 나오는것은 배열도 객체이기 때문이다.
+
+```
+var studyArr = ['test', 123, true];
+
+console.log(studyArr[0]);
+console.log(studyArr[1]);
+console.log(studyArr[2]);
+console.log(studyArr[3]);
+
+console.log(typeof studyArr[0]);
+console.log(typeof studyArr[1]);
+console.log(typeof studyArr[2]);
+console.log(typeof studyArr[3]);
+
+## 배열의 원소 추가, 수정, 삭제
+- 배열의 원소는 Dynamic 하게 추가, 수정, 삭제가 가능하다.
+- 추가시 특정 지점을 추가하여 추가가 가능하다. 현재 5번 위치까지 데이터가 있는데 10번 위치에 추가하는 경우 6,7,8,9 는 empty 가 할당된다.
+- length 프로퍼티는 데이터의 개수가 아닌 MAX 인덱스 + 1 을 나타내고 만약 0,1,2,100 번째 index 에 요소를 생성하였다면 length 는 100 + 1 인 101 이 된다. 이때 empty 영역은 메모리에 할당되어 있지는 않는다.
+- delete 로 배열을 삭제하면 해당 위치가 undefined 가 할당되며 length 값은 변하지 않는다.
+- spice() 를 사용하여야 삭제가 가능하다.
+
+```
+var studyArr = ['test', 123, true];
+
+studyArr[0] = 'TEST';
+studyArr[1] = false;
+studyArr[2] = 12345;
+studyArr[5] = 'TEST5';
+
+console.log(studyArr[0]);
+console.log(studyArr[1]);
+console.log(studyArr[2]);
+console.log(studyArr[3]);
+console.log(studyArr[4]);
+console.log(studyArr[5]);
+
+console.log(typeof studyArr[0]);
+console.log(typeof studyArr[1]);
+console.log(typeof studyArr[2]);
+console.log(typeof studyArr[3]);
+console.log(typeof studyArr[4]);
+console.log(typeof studyArr[5]);
+
+console.log(studyArr.length);
+
+delete studyArr[1];
+console.log(sutdyArr);
+
+sutdyArr[100] = 'test100';
+
+console.log(studyArr);
+
+studyArr.length = 10;
+console.log(studyArr);
+```
+```
+var studyArr1 = ['test0', 'test1', 'test2'];
+var studyArr2 = ['test0', 'test1', 'test2'];
+var studyArr3 = ['test0', 'test1', 'test2'];
+
+delete studyArr1[2];
+console.log(studyArr1);
+
+studyArr2.splice(1, 2);
+console.log(studyArr2);
+
+studyArr3.splice(1, 2, 'Test');
+console.log(studyArr3);
+```
+
+
